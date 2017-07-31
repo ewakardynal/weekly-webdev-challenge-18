@@ -40,6 +40,34 @@ h3{
 }
 
 h4{font-size: 2rem;}
+h6{font-size: 1.5rem;}
+
+button{
+   padding: 28px;
+   margin-top: 4.6em;
+   color: #fff;
+   font-size: 1.5rem;
+   font-weight: 700;
+   text-transform: uppercase;
+   width: 214px;
+   border: none;
+   background: rgb(163,26,240); /* For browsers that do not support gradients */    
+   background: -webkit-linear-gradient(left bottom, rgb(163,26,240), rgb(254,0,114)); /* For Safari 5.1 to 6.0 */
+   background: -o-linear-gradient(bottom left, rgb(163,26,240), rgb(254,0,114)); /* For Opera 11.1 to 12.0 */
+   background: -moz-linear-gradient(bottom left, rgb(163,26,240), rgb(254,0,114)); /* For Firefox 3.6 to 15 */
+   background: linear-gradient(to top right, rgb(163,26,240), rgb(254,0,114)); /* Standard syntax (must be last) */
+   cursor: pointer;
+   -webkit-transition: background 2s ease-in-out;
+   -o-transition: background 2s ease-in-out;
+   transition: all 1s ease;
+}
+
+button:hover{
+    width: 250px;
+}
+button:focus{
+   outline-style: none;
+}
 
 .wrapper {
    max-width: 1600px;
@@ -49,8 +77,8 @@ h4{font-size: 2rem;}
 }
 
 section{
-   padding: 1rem; 
-   text-align: center;
+   padding: 60px 10px 20px 10px;
+   text-align: center; 
 }
 
 header{
@@ -64,6 +92,7 @@ img{max-width: 100%;}
 /* Page nav */
 .page-header{
    position: fixed;
+   top: 0;
    width: 100%;
    min-height: 60px;
    background-color: #15263e;
@@ -96,7 +125,7 @@ img{max-width: 100%;}
 }
 
 .page-nav li:hover a,
-.page-nav li:focus a{color: #f4027f;}
+.page-nav li:focus a{color: #a31af0;}
 
 #nav-icon {
   width: 36px;
@@ -136,7 +165,7 @@ img{max-width: 100%;}
 
 #nav-icon:hover span,
 #nav-icon:focus span{
-   background-color: #f4027f;
+   background-color: #a31af0;
 }
 
 /* Icon */
@@ -191,10 +220,6 @@ img{max-width: 100%;}
 /* Section home */
 #home {
    background: url(../img/bg.png) center no-repeat ;
-/*
-   -webkit-background-size: 100% 100%;
-   background-size: 100% 100%;
-*/
    max-height: 846px;
    height: 100vh;
    display: -webkit-flex;
@@ -215,25 +240,10 @@ img{max-width: 100%;}
    margin-left: 1.5rem;
 }
 
-#home h3{color: #ffffff;}
+#home h3, #testimonials h3{color: #ffffff;}
 #home p{
    font-size: 1.9rem;
    font-weight: 500;
-}
-
-#home button{
-   padding: 2em;
-   margin-top: 4.6em;
-   color: #fff;
-   font-weight: 700;
-   text-transform: uppercase;
-   width: 214px;
-   border: none;
-   background: rgb(163,26,240); /* For browsers that do not support gradients */    
-   background: -webkit-linear-gradient(left bottom, rgb(163,26,240), rgb(254,0,114)); /* For Safari 5.1 to 6.0 */
-   background: -o-linear-gradient(bottom left, rgb(163,26,240), rgb(254,0,114)); /* For Opera 11.1 to 12.0 */
-   background: -moz-linear-gradient(bottom left, rgb(163,26,240), rgb(254,0,114)); /* For Firefox 3.6 to 15 */
-   background: linear-gradient(to top right, rgb(163,26,240), rgb(254,0,114)); /* Standard syntax (must be last) */
 }
 
 /* Section about */
@@ -242,24 +252,119 @@ img{max-width: 100%;}
    font-weight: 700;
    text-transform: uppercase;
 }
+
+.skills{
+   padding: 10px 0;
+}
+.skills p{
+   color: #4d4d4d;
+   text-transform: uppercase;
+   font-weight: 700;
+}
+
+.skills span{
+   width: 80%;
+   height: 11px;
+   border-radius: 5px;
+   display: block;
+   margin: auto;
+   background: rgb(163,26,240); /* For browsers that do not support gradients */    
+   background: -webkit-linear-gradient(left, rgb(163,26,240), rgb(254,0,114)); /* For Safari 5.1 to 6.0 */
+   background: -o-linear-gradient(left, rgb(163,26,240), rgb(254,0,114)); /* For Opera 11.1 to 12.0 */
+   background: -moz-linear-gradient(left, rgb(163,26,240), rgb(254,0,114)); /* For Firefox 3.6 to 15 */
+   background: linear-gradient(to right, rgb(163,26,240)50%, rgb(254,0,114)80%); /* Standard syntax (must be last) */
+}
+
 .contact-info {
    background-color: rgb(220,220,222);
    margin: 0 -2rem;
 }
 
+.contact-info div, .box{
+   padding: 10px 0;
+}
+
+.contact-info div>p:first-child,
+#services div p:first-child{
+   color: #4d4d4d;
+   text-transform: uppercase;
+   font-weight: 700;
+   padding-bottom: 10px;
+}
+
+.contact-info div::before, 
+.box::before{
+   content: "tel";
+   display: -webkit-flex;
+   display: -moz-flex;
+   display: -ms-flex;
+   display: -o-flex;
+   display: flex;
+   -ms-align-items: center;
+   align-items: center;
+   justify-content: center;
+   margin: 10px auto;
+   border-radius: 50%;
+   
+}
+.contact-info div::before{
+   width: 87px;
+   height: 87px;
+   background-color: #384363;
+}
+
 /* Section our services */
+#services div::before{
+   width: 115px;
+   height: 115px;
+   background: rgb(163,26,240); /* For browsers that do not support gradients */    
+   background: -webkit-linear-gradient(left bottom, rgb(163,26,240), rgb(254,0,114)); /* For Safari 5.1 to 6.0 */
+   background: -o-linear-gradient(bottom left, rgb(163,26,240), rgb(254,0,114)); /* For Opera 11.1 to 12.0 */
+   background: -moz-linear-gradient(bottom left, rgb(163,26,240), rgb(254,0,114)); /* For Firefox 3.6 to 15 */
+   background: linear-gradient(to top right, rgb(163,26,240), rgb(254,0,114)); /* Standard syntax (must be last) */
+}
+
 
 /* Section testimonials */
 #testimonials {
    background: url(../img/testimonials-bg.png) center no-repeat ;
-   -webkit-background-size: 100% 100%;
-   background-size: 100% 100%;
+   color: #ffffff;
 }
 
+blockquote::before, blockquote::after {
+   content: '"';
+   color: #ff4455;
+}
+
+#testimonials img{
+   border: 5px solid #ffffff;
+   border-radius: 50%;
+   margin: 10px auto;
+}
+.testimonials-info p{
+   color: #a31af0;
+   font-weight: 700;
+}
+
+
 /* Section portfolio */
+.categories{
+   padding: 10px 0;
+}
+.categories li{
+   display: inline-block;
+   padding: 0 5px;
+}
+.categories a{
+   color: #4d4d4d;
+   text-decoration: none;
+   text-transform: uppercase;
+   font-weight: 700;
+}
 
-
-
+.categories a:hover{
+   color: #a31af0;
+}
 
 /* Section experience */
 #experience {
@@ -268,17 +373,51 @@ img{max-width: 100%;}
     background: -o-linear-gradient(bottom left, rgb(163,26,240), rgb(254,0,114)); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(bottom left, rgb(163,26,240), rgb(254,0,114)); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to top right, rgb(163,26,240), rgb(254,0,114)); /* Standard syntax (must be last) */
+   color: #fff;
 }
 
+#experience h3{
+   color: #fff;
+}
+.row{
+   padding: 20px 0;
+}
+.row h4{
+   padding: 10px 0;
+}
 /* Section blog */
+.post{
+   padding: 20px 0;
+}
+.post figcaption{
+   text-transform: uppercase;
+   color: #929292;
+   font-weight: 700;
+   padding: 20px 0 15px;
+}
 
-
+.post h6{
+   color: #15253f;
+   padding-bottom: 15px;
+}
 /* Section contact */
 #contact {
    background-color: rgb(22,38,63);
    color: #ffffff;
 }
+
 #contact h3{color: #fff;}
+
+#contact input,
+#contact textarea{
+   width: 100%;
+   padding: 10px;
+   margin: 5px 0;
+   font-family: inherit;
+}
+#contact button{
+   margin-top: 20px;
+}
 
 
 /* Footer */
@@ -322,6 +461,7 @@ footer{
    .page-nav li{
       display: flex;
       flex-grow: 1;
+      padding: 0;
    }
 
    .page-nav li:last-child{
