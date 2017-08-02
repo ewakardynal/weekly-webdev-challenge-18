@@ -3,19 +3,15 @@
    padding: 0;
    box-sizing: border-box;
 }
-
 html{font-size: 62.5%;}
-
 body{
    font-family: 'Poppins', sans-serif;
    font-size: 1.4rem;
 }
-
 h1, h2, h3, h4{
    text-transform: uppercase;
    line-height: 1;
 }
-
 h1{
    font-size: 10rem;
    font-weight: 600;
@@ -27,21 +23,17 @@ h1{
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
-
 h2{
    font-size: 5.5rem;
    font-weight: 500;
 }
-
 h3{
    font-size: 2.5rem;
    font-weight: 600;
    color: #16263f;
 }
-
 h4{font-size: 2rem;}
 h6{font-size: 1.5rem;}
-
 button{
    padding: 28px;
    margin-top: 4.6em;
@@ -61,33 +53,37 @@ button{
    -o-transition: background 2s ease-in-out;
    transition: all 1s ease;
 }
-
 button:hover{
     width: 250px;
 }
-button:focus{
-   outline-style: none;
-}
-
+button:focus{outline-style: none;}
 .wrapper {
    max-width: 1600px;
    margin: 0 auto;
    position: relative;
    overflow: hidden;
 }
-
 section{
    padding: 60px 10px 20px 10px;
    text-align: center; 
 }
-
 header{
    text-align: center;
    max-width: 100%;
    padding: 2rem 0;
 }
-
 img{max-width: 100%;}
+.row{
+   display: -webkit-flex;
+   display: -moz-flex;
+   display: -ms-flex;
+   display: -o-flex;
+   display: flex;
+   flex-wrap: wrap;
+/*   justify-content: center;*/
+/*   align-content: space-around;*/
+   align-items: center;
+}
 
 /* Page nav */
 .page-header{
@@ -97,25 +93,20 @@ img{max-width: 100%;}
    min-height: 60px;
    background-color: #15263e;
 }
-
 .page-header.nav-opened{
    background-color: #16263f;
    -webkit-box-shadow: -1px 14px 19px -8px rgba(0,0,0,0.49);
    box-shadow:  -1px 14px 19px -8px rgba(0,0,0,0.49);
 }
-
 .page-header.nav-opened ul{display: block;}
-
 .page-nav ul{
    list-style: none;
    display: none;
 }
-
 .page-nav li{
    padding-top: 15px;
    padding-bottom: 15px;
 }
-
 .page-nav a{
    color: #fff;
    text-decoration: none;
@@ -123,10 +114,8 @@ img{max-width: 100%;}
    font-weight: 700;
    display: block;
 }
-
 .page-nav li:hover a,
 .page-nav li:focus a{color: #a31af0;}
-
 #nav-icon {
   width: 36px;
   height: 20px;
@@ -143,7 +132,6 @@ img{max-width: 100%;}
   transition: .5s ease-in-out;
   cursor: pointer;
 }
-
 #nav-icon span {
   display: block;
   position: absolute;
@@ -162,11 +150,8 @@ img{max-width: 100%;}
   -o-transition: .25s ease-in-out;
   transition: .25s ease-in-out;
 }
-
 #nav-icon:hover span,
-#nav-icon:focus span{
-   background-color: #a31af0;
-}
+#nav-icon:focus span{background-color: #a31af0;}
 
 /* Icon */
 #nav-icon span:nth-child(1) {
@@ -176,7 +161,6 @@ img{max-width: 100%;}
   -o-transform-origin: left center;
   transform-origin: left center;
 }
-
 #nav-icon span:nth-child(2) {
   top: 8px;
   -webkit-transform-origin: left center;
@@ -184,7 +168,6 @@ img{max-width: 100%;}
   -o-transform-origin: left center;
   transform-origin: left center;
 }
-
 #nav-icon span:nth-child(3) {
   top: 16px;
   -webkit-transform-origin: left center;
@@ -192,7 +175,6 @@ img{max-width: 100%;}
   -o-transform-origin: left center;
   transform-origin: left center;
 }
-
 #nav-icon.open span:nth-child(1) {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -201,12 +183,10 @@ img{max-width: 100%;}
   top: -5.27px;
   left: 5.27px;
 }
-
 #nav-icon.open span:nth-child(2) {
   width: 0%;
   opacity: 0;
 }
-
 #nav-icon.open span:nth-child(3) {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -216,10 +196,11 @@ img{max-width: 100%;}
   left: 5.27px;
 }
 
-
 /* Section home */
+
 #home {
    background: url(../img/bg.png) center no-repeat ;
+   min-height: 450px;
    max-height: 846px;
    height: 100vh;
    display: -webkit-flex;
@@ -234,12 +215,10 @@ img{max-width: 100%;}
    font-weight: 600;
    text-transform: uppercase;
 }
-
 #home h2{
    letter-spacing: 2.6rem;
    margin-left: 1.5rem;
 }
-
 #home h3, #testimonials h3{color: #ffffff;}
 #home p{
    font-size: 1.9rem;
@@ -247,12 +226,25 @@ img{max-width: 100%;}
 }
 
 /* Section about */
+.about-designer{
+   align-items: center;
+}
+.about-designer div{
+   margin: 20px auto;
+}
+.photo img{
+   width: 300px;
+   max-width: 100%;
+}
+.photo, 
+.skills{
+   flex-grow: 1;
+}
 #about header p{
    color: #a31af0;
    font-weight: 700;
    text-transform: uppercase;
 }
-
 .skills{
    padding: 10px 0;
 }
@@ -261,9 +253,8 @@ img{max-width: 100%;}
    text-transform: uppercase;
    font-weight: 700;
 }
-
 .skills span{
-   width: 80%;
+   width: 100%;
    height: 11px;
    border-radius: 5px;
    display: block;
@@ -275,13 +266,11 @@ img{max-width: 100%;}
    background: linear-gradient(to right, rgb(163,26,240)50%, rgb(254,0,114)80%); /* Standard syntax (must be last) */
 }
 
+
 .contact-info {
    background-color: rgb(220,220,222);
-   margin: 0 -2rem;
-}
-
-.contact-info div, .box{
-   padding: 10px 0;
+   margin: 0 -1rem;
+   padding: 1rem;
 }
 
 .contact-info div>p:first-child,
@@ -292,28 +281,33 @@ img{max-width: 100%;}
    padding-bottom: 10px;
 }
 
-.contact-info div::before, 
-.box::before{
-   content: "tel";
-   display: -webkit-flex;
-   display: -moz-flex;
-   display: -ms-flex;
-   display: -o-flex;
-   display: flex;
-   -ms-align-items: center;
-   align-items: center;
-   justify-content: center;
-   margin: 10px auto;
-   border-radius: 50%;
-   
+.contact-info .col::before{
+  content:"tel";
+  border-radius:50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 87px;
+  min-height: 87px;
+  background-color: #384363;
+  margin: 20px auto;
 }
-.contact-info div::before{
-   width: 87px;
-   height: 87px;
-   background-color: #384363;
+.contact-info .col{
+   margin: 0 auto;
+   padding: 10px;
+   width: 100%;
 }
-
+.contact-info .col>div{
+   margin: 0 auto;
+   width: 100%;
+}
 /* Section our services */
+#services .box{
+   width: 100%;
+   padding: 20px 0;
+}
 #services div::before{
    width: 115px;
    height: 115px;
@@ -324,18 +318,15 @@ img{max-width: 100%;}
    background: linear-gradient(to top right, rgb(163,26,240), rgb(254,0,114)); /* Standard syntax (must be last) */
 }
 
-
 /* Section testimonials */
 #testimonials {
    background: url(../img/testimonials-bg.png) center no-repeat ;
    color: #ffffff;
 }
-
 blockquote::before, blockquote::after {
    content: '"';
    color: #ff4455;
 }
-
 #testimonials img{
    border: 5px solid #ffffff;
    border-radius: 50%;
@@ -361,7 +352,6 @@ blockquote::before, blockquote::after {
    text-transform: uppercase;
    font-weight: 700;
 }
-
 .categories a:hover{
    color: #a31af0;
 }
@@ -375,16 +365,17 @@ blockquote::before, blockquote::after {
     background: linear-gradient(to top right, rgb(163,26,240), rgb(254,0,114)); /* Standard syntax (must be last) */
    color: #fff;
 }
-
 #experience h3{
    color: #fff;
 }
-.row{
+#experience .row{
    padding: 20px 0;
 }
-.row h4{
+#experience .row h4{
    padding: 10px 0;
+   margin: auto;
 }
+
 /* Section blog */
 .post{
    padding: 20px 0;
@@ -395,30 +386,27 @@ blockquote::before, blockquote::after {
    font-weight: 700;
    padding: 20px 0 15px;
 }
-
 .post h6{
    color: #15253f;
    padding-bottom: 15px;
 }
+
 /* Section contact */
 #contact {
    background-color: rgb(22,38,63);
    color: #ffffff;
 }
-
 #contact h3{color: #fff;}
-
 #contact input,
 #contact textarea{
    width: 100%;
    padding: 10px;
    margin: 5px 0;
    font-family: inherit;
+   border: 0;
 }
-#contact button{
-   margin-top: 20px;
-}
-
+#contact input:focus, #contact textarea:focus{outline-color: #a31af0;}
+#contact button{margin-top: 20px;}
 
 /* Footer */
 footer{
@@ -430,6 +418,71 @@ footer{
 
 /* Extra Small Devices, Phones */ 
  @media only screen and (min-width : 480px) {
+   /* Page nav */
+   /* Icon */
+   /* Section home */
+   /* Section about */
+   .photo{
+      width: 50%;
+   }
+   .skills{
+      width: 50%;
+   }
+   /* Section our services */
+    #services .box{
+      width: 50%;
+      padding: 20px 15px;
+   }
+    .contact-info{
+       padding: 4rem 1rem;
+    }
+
+    .contact-info .col{
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      padding: 20px 0;
+/*      margin: 0 auto;*/
+/*      padding: 0;*/
+/*      justify-content: space-around;*/
+   }
+  
+   .contact-info .col::before{
+     content:"tel";
+     border-radius:50%;
+     width: 50px;
+     height: 50px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-width: 87px;
+     min-height: 87px;
+     background-color: #384363;
+     margin: 0px;
+   }
+   .contact-info .col{
+/*   width: auto;*/
+   max-width: 300px;
+   margin: 0 auto;
+   }
+  .contact-info .col>div{
+   margin: 0;
+   margin-left: 30px;
+   width: auto;
+   text-align: left;
+     /*   min-width: 200px;*/
+
+}
+   /* Section testimonials */
+   /* Section portfolio */
+   /* Section experience */
+   /* Section blog */
+   /* Section contact */
+   /* Footer */
 
  }
 
@@ -485,11 +538,40 @@ footer{
    .page-nav #nav-icon{
       display: none; 
    }
+    
+   /* Page nav */
+   /* Icon */
+   /* Section home */
+   /* Section about */
+    
+    
+    
+   /* Section our services */
+   #services .box{
+      width: 33%;
+   }
+   /* Section testimonials */
+   /* Section portfolio */
+   /* Section experience */
+   /* Section blog */
+   /* Section contact */
+   /* Footer */
 
 }
 
  /* Medium Devices, Desktops */
  @media only screen and (min-width : 992px) {
+   /* Page nav */
+   /* Icon */
+   /* Section home */
+   /* Section about */
+   /* Section our services */
+   /* Section testimonials */
+   /* Section portfolio */
+   /* Section experience */
+   /* Section blog */
+   /* Section contact */
+   /* Footer */
    .page-nav ul{
       max-width: 80%;
    }
@@ -497,5 +579,18 @@ footer{
 
  /* Large Devices, Wide Screens */
  @media only screen and (min-width : 1200px) {
+   /* Page nav */
+   /* Icon */
+   /* Section home */
+   /* Section about */
+    
+
+   /* Section our services */
+   /* Section testimonials */
+   /* Section portfolio */
+   /* Section experience */
+   /* Section blog */
+   /* Section contact */
+   /* Footer */
 
  }
