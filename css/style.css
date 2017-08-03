@@ -34,6 +34,9 @@ h3{
 }
 h4{font-size: 2rem;}
 h6{font-size: 1.5rem;}
+p, blockquote{
+   line-height: 1.8;
+}
 button{
    padding: 28px;
    margin-top: 4.6em;
@@ -81,7 +84,7 @@ img{max-width: 100%;}
    display: flex;
    flex-wrap: wrap;
 /*   justify-content: center;*/
-/*   align-content: space-around;*/
+/*   align-content: space-between;*/
    align-items: center;
 }
 
@@ -89,6 +92,7 @@ img{max-width: 100%;}
 .page-header{
    position: fixed;
    top: 0;
+   left: 0;
    width: 100%;
    min-height: 60px;
    background-color: #15263e;
@@ -281,6 +285,7 @@ img{max-width: 100%;}
    padding-bottom: 10px;
 }
 
+/*
 .contact-info .col::before{
   content:"tel";
   border-radius:50%;
@@ -294,6 +299,7 @@ img{max-width: 100%;}
   background-color: #384363;
   margin: 20px auto;
 }
+*/
 .contact-info .col{
    margin: 0 auto;
    padding: 10px;
@@ -308,29 +314,52 @@ img{max-width: 100%;}
    width: 100%;
    padding: 20px 0;
 }
-#services div::before{
-   width: 115px;
-   height: 115px;
-   background: rgb(163,26,240); /* For browsers that do not support gradients */    
-   background: -webkit-linear-gradient(left bottom, rgb(163,26,240), rgb(254,0,114)); /* For Safari 5.1 to 6.0 */
-   background: -o-linear-gradient(bottom left, rgb(163,26,240), rgb(254,0,114)); /* For Opera 11.1 to 12.0 */
-   background: -moz-linear-gradient(bottom left, rgb(163,26,240), rgb(254,0,114)); /* For Firefox 3.6 to 15 */
-   background: linear-gradient(to top right, rgb(163,26,240), rgb(254,0,114)); /* Standard syntax (must be last) */
-}
+
 
 /* Section testimonials */
 #testimonials {
    background: url(../img/testimonials-bg.png) center no-repeat ;
    color: #ffffff;
 }
+#testimonials .row{
+   justify-content: space-around;
+}
+blockquote{
+   max-width: 80%;
+   margin: auto;
+}
 blockquote::before, blockquote::after {
-   content: '"';
-   color: #ff4455;
+   content: '\f10d';
+   font-family: "FontAwesome";
+   color: #ffffff;
+   font-size: 2.5rem;
+   display: -webkit-flex;
+   display: -moz-flex;
+   display: -ms-flex;
+   display: -o-flex;
+   display: flex;
+}
+blockquote::before{
+   position: relative;
+   right: 30px;
+   top: 2px;
+}
+blockquote::after{
+   content: "\f10e";
+   justify-content: flex-end;
+   position: relative;
+   right: -30px;
+   top: -5px;
 }
 #testimonials img{
-   border: 5px solid #ffffff;
+   border: 7px solid #ffffff;
    border-radius: 50%;
-   margin: 10px auto;
+   margin: auto;
+   max-width: 130px;
+   
+}
+.testimonials-photo{
+   width: 100%;
 }
 .testimonials-info p{
    color: #a31af0;
@@ -354,6 +383,11 @@ blockquote::before, blockquote::after {
 }
 .categories a:hover{
    color: #a31af0;
+}
+.project{
+   max-width: 465px;
+   max-height: 349px;
+   padding: 10px;
 }
 
 /* Section experience */
@@ -405,6 +439,9 @@ blockquote::before, blockquote::after {
    font-family: inherit;
    border: 0;
 }
+textarea{
+   resize:vertical;
+}
 #contact input:focus, #contact textarea:focus{outline-color: #a31af0;}
 #contact button{margin-top: 20px;}
 
@@ -424,103 +461,118 @@ footer{
    /* Section about */
    .photo{
       width: 50%;
+      order: 1;
    }
    .skills{
       width: 50%;
    }
    /* Section our services */
-    #services .box{
+   #services .box{
       width: 50%;
       padding: 20px 15px;
    }
-    .contact-info{
+   .contact-info{
        padding: 4rem 1rem;
-    }
+   }
 
-    .contact-info .col{
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -o-flex;
-      display: flex;
-      align-items: center;
-      flex-grow: 1;
-      padding: 20px 0;
-/*      margin: 0 auto;*/
-/*      padding: 0;*/
-/*      justify-content: space-around;*/
-   }
-  
-   .contact-info .col::before{
-     content:"tel";
-     border-radius:50%;
-     width: 50px;
-     height: 50px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     min-width: 87px;
-     min-height: 87px;
-     background-color: #384363;
-     margin: 0px;
-   }
    .contact-info .col{
-/*   width: auto;*/
-   max-width: 300px;
-   margin: 0 auto;
+      width: 50%;
+      margin: auto;
    }
-  .contact-info .col>div{
-   margin: 0;
-   margin-left: 30px;
-   width: auto;
-   text-align: left;
-     /*   min-width: 200px;*/
 
-}
+   .contact-info .col:last-child{
+      width: 50%;
+      margin: 0;
+   }
+
    /* Section testimonials */
+    .testimonials-photo, .testimonials-info{
+   width: 50%;
+   padding: 10px;
+}
+    
    /* Section portfolio */
+    .projects{
+       display: -webkit-flex;
+       display: -moz-flex;
+       display: -ms-flex;
+       display: -o-flex;
+       display: flex;
+       justify-content: center;
+    }
+    .projects .col{
+       display: -webkit-flex;
+       display: -moz-flex;
+       display: -ms-flex;
+       display: -o-flex;
+       display: flex;
+       flex-direction: column;
+       max-width: 50%;
+       flex-wrap: wrap;
+    }
+    
    /* Section experience */
+   
+    
    /* Section blog */
+    .post{
+       width: 50%;
+       padding: 10px;
+    }
+    #blog .row{
+/*       justify-content: space-around;*/
+       align-items: baseline;
+       flex-wrap: wrap;
+       justify-content: flex-start;    }
+    
    /* Section contact */
+   
    /* Footer */
 
  }
 
+@media only screen and (min-width : 630px){
+   .contact-info .col,
+   .contact-info .col:last-child{
+      width: 33%;
+      margin: auto;
+   }
+     #contact input{
+       max-width: 32%;
+    }
+    #contact input:nth-child(2){
+       margin: 5px 2%;
+    }
+}
+
  /* Small Devices, Tablets */
  @media only screen and (min-width : 768px) {
    h1{
-      font-size: 11em;
+      font-size: 14rem;
    }
-    
    h2{
-      font-size: 6.2em;
+      font-size: 10rem;
    }
-    
    h3{
-      font-size: 2.7em;
+      font-size: 3.8rem;
    }
-    
    h4{
-      font-size: 2em;
+      font-size: 2rem;
    }
-    
    .page-nav ul{
       display: flex;
       justify-content: space-around;
       max-width: 90%;
       margin: 0 auto;
    }
-
    .page-nav li{
       display: flex;
       flex-grow: 1;
       padding: 0;
    }
-
    .page-nav li:last-child{
       flex-grow: 0;
    }
-
    .page-nav li::after{
       content: "";
       width: 8px;
@@ -530,11 +582,9 @@ footer{
       display: block;
       margin:auto;
    }
-
    .page-nav li:last-child::after{
       display: none;
    }
-
    .page-nav #nav-icon{
       display: none; 
    }
@@ -544,28 +594,171 @@ footer{
    /* Section home */
    /* Section about */
     
-    
-    
    /* Section our services */
+    #services .row{
+       align-items: stretch;
+    }
    #services .box{
       width: 33%;
    }
+    #services .box::before{
+  content:"";
+   font-family: "FontAwesome";
+   font-size: 4rem;
+   color: #fff;
+  border-radius:50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 114px;
+  min-height: 114px;
+  margin: 20px auto;
+   width: 115px;
+   height: 115px;
+   background: rgb(163,26,240); /* For browsers that do not support gradients */    
+   background: -webkit-linear-gradient(left bottom, rgb(163,26,240), rgb(254,0,114)); /* For Safari 5.1 to 6.0 */
+   background: -o-linear-gradient(bottom left, rgb(163,26,240), rgb(254,0,114)); /* For Opera 11.1 to 12.0 */
+   background: -moz-linear-gradient(bottom left, rgb(163,26,240), rgb(254,0,114)); /* For Firefox 3.6 to 15 */
+   background: linear-gradient(to top right, rgb(163,26,240), rgb(254,0,114)); /* Standard syntax (must be last) */
+}
+    #services .box:first-child::before {
+       content:"\f085";
+    }
+    #services .box:nth-child(2)::before {
+       content:"\f0c1 ";
+    }
+    #services .box:nth-child(3)::before {
+       content:"\f247 ";
+    }
+    #services .box:nth-child(4)::before {
+       content:"\f135 ";
+    }
+    #services .box:nth-child(5)::before {
+       content:"\f1e6 ";
+    }
+    #services .box:last-child::before {
+       content:"\f0eb";
+    }
+    
    /* Section testimonials */
+    #testimonials{
+       padding: 60px 5% 10% 5%;
+    }
+    #testimonials blockquote{
+       width: 50%;
+       text-align: right;
+       padding: 0 30px;
+    }
+    .testimonials-photo, .testimonials-info{
+       width: 25%;
+    }
    /* Section portfolio */
+    
    /* Section experience */
+    #experience .row h4{
+       width: 30%;
+    }
+    #experience .row p{
+       width: 70%;
+    }
+       #experience .row:nth-child(odd) h4{
+       order: 1;
+    }
+     #experience .row:nth-child(odd) h4, #experience h4 {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+    }
+    #experience .row:nth-child(odd) h4, #experience .row:nth-child(even) p{
+       text-align: left;
+       padding-left: 10px;
+    }
+    #experience .row:nth-child(even) h4, #experience .row:nth-child(odd) p{
+       text-align: right;
+       padding-right: 20px;
+    }
+    
+    #experience .row:nth-child(odd)>h4::before {
+       content: "";
+       width: 8px;
+       background-color: #dcdcdc;
+/*       margin-left: -20px;*/
+       margin-right: 20px;
+    }
+    
+        #experience .row:nth-child(even)>h4::after {
+       content: "";
+       width: 8px;
+       background-color: #dcdcdc;
+/*       margin-right: -20px;*/
+       margin-left: 40px;
+    }
+    
    /* Section blog */
+    .post{
+       width: 33%;
+       padding: 10px;
+    }
    /* Section contact */
+    
    /* Footer */
 
 }
 
  /* Medium Devices, Desktops */
  @media only screen and (min-width : 992px) {
-   /* Page nav */
-   /* Icon */
    /* Section home */
    /* Section about */
+    
+     .contact-info .col{
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      padding: 20px 0;
+      max-width: 300px;
+      margin: 0 auto;
+   }
+  
+   .contact-info .col::before{
+      content:"";
+      font-family: "FontAwesome";
+      font-size: 3rem;
+      color: #fff;
+      border-radius:50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 87px;
+      min-height: 87px;
+      background-color: #384363;
+      margin: 0px;
+   }
+    .contact-info .col:first-child::before {
+       content:"\f10b";
+    }
+    .contact-info .col:nth-child(2)::before {
+       content:"\f041 ";
+    }
+    .contact-info .col:last-child::before {
+       content:"\f085";
+    }
+  .contact-info .col>div{
+      margin: 0;
+      margin-left: 30px;
+      width: auto;
+      text-align: left;
+     /*   min-width: 200px;*/
+   }
+    
    /* Section our services */
+
+    
    /* Section testimonials */
    /* Section portfolio */
    /* Section experience */
@@ -579,18 +772,54 @@ footer{
 
  /* Large Devices, Wide Screens */
  @media only screen and (min-width : 1200px) {
+    section:not([id="about"]), #testimonials{
+       padding-right: 8%;
+       padding-left: 8%;
+    }
    /* Page nav */
    /* Icon */
    /* Section home */
    /* Section about */
+    .about-designer{
+       padding: 0 5%
+    }
+    .about-designer>div{
+       width: 30%;
+    }
+    .about-designer .info,
+    .about-designer header{
+       text-align: right;
+    }
+    .about-designer .photo{
+       width: 40%;
+       margin: 0;
+       position: relative;
+       top: 8px;
+       z-index: -1;
+    }
+    .about-designer .photo{
+       order: 0;
+    }
+    .about-designer .photo img{
+       width: 100%;
+    }
     
 
    /* Section our services */
    /* Section testimonials */
+    
    /* Section portfolio */
    /* Section experience */
    /* Section blog */
    /* Section contact */
+    #contact{
+       background: url(../img/contact-bg.png) center no-repeat;
+/*       padding: 60px 120px;*/
+    }
+    .form{
+       background-color: rgb(22,38,63);
+       padding: 7%;
+    }
    /* Footer */
 
  }
