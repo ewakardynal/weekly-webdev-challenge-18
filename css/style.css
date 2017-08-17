@@ -56,7 +56,7 @@ button{
    -o-transition: background 2s ease-in-out;
    transition: all 1s ease;
 }
-button:hover{
+button:hover, button:focus{
     width: 250px;
 }
 button:focus{outline-style: none;}
@@ -96,6 +96,7 @@ img{max-width: 100%;}
    width: 100%;
    min-height: 60px;
    background-color: #15263e;
+   z-index: 100;
 }
 .page-header.nav-opened{
    background-color: #16263f;
@@ -234,7 +235,13 @@ img{max-width: 100%;}
    align-items: center;
 }
 .about-designer div{
-   margin: 20px auto;
+   margin: 0px auto;
+}
+.about-designer .photo{
+   margin: 0;
+    position: relative;
+    top: 15px;
+    z-index: -1;
 }
 .photo img{
    width: 300px;
@@ -250,7 +257,7 @@ img{max-width: 100%;}
    text-transform: uppercase;
 }
 .skills{
-   padding: 10px 0;
+   padding: 10px 10px 20px 10px;
 }
 .skills p{
    color: #4d4d4d;
@@ -262,7 +269,7 @@ img{max-width: 100%;}
    height: 11px;
    border-radius: 5px;
    display: block;
-   margin: auto;
+   margin: 2px auto 10px auto;
    background: rgb(163,26,240); /* For browsers that do not support gradients */    
    background: -webkit-linear-gradient(left, rgb(163,26,240), rgb(254,0,114)); /* For Safari 5.1 to 6.0 */
    background: -o-linear-gradient(left, rgb(163,26,240), rgb(254,0,114)); /* For Opera 11.1 to 12.0 */
@@ -341,15 +348,15 @@ blockquote::before, blockquote::after {
 }
 blockquote::before{
    position: relative;
-   right: 30px;
-   top: 2px;
+   right: 25px;
+   top: 15px;
 }
 blockquote::after{
    content: "\f10e";
    justify-content: flex-end;
    position: relative;
    right: -30px;
-   top: -5px;
+   top: -15px;
 }
 #testimonials img{
    border: 7px solid #ffffff;
@@ -429,6 +436,9 @@ blockquote::after{
 #contact {
    background-color: rgb(22,38,63);
    color: #ffffff;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-bottom: 60px;
 }
 #contact h3{color: #fff;}
 #contact input,
@@ -443,7 +453,9 @@ textarea{
    resize:vertical;
 }
 #contact input:focus, #contact textarea:focus{outline-color: #a31af0;}
-#contact button{margin-top: 20px;}
+#contact button{
+   margin-top: 20px;
+}
 
 /* Footer */
 footer{
@@ -538,7 +550,7 @@ footer{
       margin: auto;
    }
      #contact input{
-       max-width: 32%;
+        flex: 1;
     }
     #contact input:nth-child(2){
        margin: 5px 2%;
@@ -593,6 +605,8 @@ footer{
    /* Icon */
    /* Section home */
    /* Section about */
+    
+     
     
    /* Section our services */
     #services .row{
@@ -652,8 +666,25 @@ footer{
     .testimonials-photo, .testimonials-info{
        width: 25%;
     }
-   /* Section portfolio */
     
+    
+   /* Section portfolio */
+    #portfolio .columns{
+       display: -webkit-flex;
+       display: -moz-flex;
+       display: -ms-flex;
+       display: -o-flex;
+       display: flex;
+    }
+    .categories ul li{
+       display: -webkit-flex;
+       display: -moz-flex;
+       display: -ms-flex;
+       display: -o-flex;
+       display: flex;
+       padding: 10px;
+       padding-right: 30px;
+    }
    /* Section experience */
     #experience .row h4{
        width: 30%;
@@ -698,8 +729,8 @@ footer{
     
    /* Section blog */
     .post{
-       width: 33%;
-       padding: 10px;
+       flex: 1;
+       text-align: left;
     }
    /* Section contact */
     
@@ -756,6 +787,27 @@ footer{
      /*   min-width: 200px;*/
    }
     
+    
+    
+      .about-designer{
+       padding: 0 5%
+    }
+    .about-designer>div{
+       width: 30%;
+    }
+    .about-designer .info,
+    .about-designer header{
+       text-align: right;
+    }
+    .about-designer .photo{
+       width: 40%;
+    }
+    .about-designer .photo{
+       order: 0;
+    }
+    .about-designer .photo img{
+       width: 100%;
+    }
    /* Section our services */
 
     
@@ -780,29 +832,7 @@ footer{
    /* Icon */
    /* Section home */
    /* Section about */
-    .about-designer{
-       padding: 0 5%
-    }
-    .about-designer>div{
-       width: 30%;
-    }
-    .about-designer .info,
-    .about-designer header{
-       text-align: right;
-    }
-    .about-designer .photo{
-       width: 40%;
-       margin: 0;
-       position: relative;
-       top: 8px;
-       z-index: -1;
-    }
-    .about-designer .photo{
-       order: 0;
-    }
-    .about-designer .photo img{
-       width: 100%;
-    }
+ 
     
 
    /* Section our services */
